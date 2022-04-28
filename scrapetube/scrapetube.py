@@ -9,6 +9,7 @@ from typing_extensions import Literal
 def get_channel(
     channel_id: str = None,
     channel_url: str = None,
+    channel_name: str = None,
     limit: int = None,
     sleep: int = 1,
     sort_by: Literal["newest", "oldest", "popular"] = "newest",
@@ -42,7 +43,7 @@ def get_channel(
 
     sort_by_map = {"newest": "dd", "oldest": "da", "popular": "p"}
     url = "{url}/videos?view=0&sort={sort_by}&flow=grid".format(
-        url=channel_url or f"https://www.youtube.com/channel/{channel_id}",
+        url=channel_url or f"https://www.youtube.com/c/{channel_name}" or f"https://www.youtube.com/channel/{channel_id}",
         sort_by=sort_by_map[sort_by],
     )
     api_endpoint = "https://www.youtube.com/youtubei/v1/browse"
