@@ -27,6 +27,11 @@ def get_channel(
             Since there is a few type's of channel url's, you can use the one you want
             by passing it here instead of using ``channel_id``.
 
+        channel_name (``str``, *optional*):
+            The name to the channel you want to get the videos for.
+            Since certain channels can have actual name-values vs. randomized channel IDs, you can access a channel using its name
+            by passing it here instead of using ``channel_id``.
+
         limit (``int``, *optional*):
             Limit the number of videos you want to get.
 
